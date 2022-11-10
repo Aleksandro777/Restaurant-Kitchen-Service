@@ -1,13 +1,12 @@
-<ul class="sidebar-nav">
+<ul class="sidebar-nav list-group">
   {% if user.is_authenticated %}
-    <p>User: <a href="{% url "kitchen:cook-detail" pk=user.id %}">{{ user.username }}</a>
-      <br>
-    <a href="{% url "logout" %}">Logout</a></p>
+     <li class="list-group-item list-group-item-action list-group-item-secondary"><a href="{% url "kitchen:cook-detail" pk=user.id %}">{{ user.username }}</a> </li>
+     <li class="list-group-item list-group-item-action list-group-item-secondary"><a href="{% url "logout" %}">Logout</a></li>
   {% else %}
-    <li><a href="{% url "login" %}">Login</a> </li>
+    <li class="list-group-item list-group-item-action list-group-item-primary"><a href="{% url "login" %}">Login</a> </li>
   {% endif %}
-    <li><a href="{% url 'kitchen:index' %}">Home page</a></li>
-    <li><a href="{% url 'kitchen:dish-type-list' %}">Types of dishes</a></li>
-    <li><a href="{% url 'kitchen:dish-list' %}">Dishes</a></li>
-    <li><a href="{% url 'kitchen:cook-list' %}">Cooks</a></li>
+    <li class="list-group-item list-group-item-action"><a href="{% url 'kitchen:index' %}">Home page</a></li>
+    <li class="list-group-item list-group-item-action"><a href="{% url 'kitchen:dish-type-list' %}">Types of dishes</a></li>
+    <li class="list-group-item list-group-item-action"><a href="{% url 'kitchen:dish-list' %}">Dishes</a></li>
+    <li class="list-group-item list-group-item-action"><a href="{% url 'kitchen:cook-list' %}">Cooks</a></li>
 </ul>

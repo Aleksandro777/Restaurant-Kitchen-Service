@@ -1,11 +1,17 @@
 {% extends "base.html" %}
 
 {% block content %}
-      <h1>{{ cooks.first_name }} {{ cooks.last_name }}</h1>
+      <h1>
+    Username: {{ cooks.username }}
+
+    <a href="{% url "kitchen:cook-delete" pk=cooks.id %}" class="btn btn-outline-danger" role="button">Delete</a>
+  </h1>
 
     <p>
       <strong>Username: </strong>{{ cooks.username }}<br>
       <strong>Years of experience: </strong> {{ cooks.years_of_experience }}
+    <strong>Years of experience:</strong> {{ cooks.years_of_experience }}
+    <a href="{% url "kitchen:cook-update" pk=cooks.id %}" class="btn btn-outline-primary" role="button">Edit years of experience</a>
     </p>
 
   {% if cooks.dishes.all %}

@@ -1,13 +1,23 @@
 {% extends "base.html" %}
+{% load crispy_forms_filters %}
 
 {% block content %}
   <h1>
     Cooks
+    <a href="{% url 'kitchen:cook-create' %}" class="btn btn-outline-primary link-to-page">
+      Create
+    </a>
   </h1>
-    <table class="table table-bordered">
+  <br>
+  <form action="" method="get" class="form-inline">
+    {{search_form|crispy }}
+      <input type="submit" class="btn btn-outline-secondary" value="🔎">
+  </form>
+  <br>
+    <table class="table table table-dark">
       <thead>
       <tr>
-        <th scope="col">Id</th>
+        <td scope="col">Id</td>
         <th scope="col">Username</th>
         <th scope="col">Name</th>
         <th scope="col">Last name</th>

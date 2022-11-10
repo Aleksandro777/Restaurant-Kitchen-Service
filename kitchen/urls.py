@@ -12,7 +12,12 @@ from kitchen.views import (
     DishTypeDeleteView,
     DishCreateView,
     DishUpdateView,
-    DishDeleteView
+    DishDeleteView,
+    CookCreateView,
+    CookUpdateView,
+    CookDeleteView,
+    delete_cook_from_dish,
+    assign_cook_to_dish
 )
 
 urlpatterns = [
@@ -39,6 +44,9 @@ urlpatterns = [
     path("dish/",
          DishListView.as_view(),
          name="dish-list"),
+    path("dish/<int:pk>/",
+         DishDetailView.as_view(),
+         name="dish-detail"),
     path(
         "dish/create/",
         DishCreateView.as_view(),
@@ -57,12 +65,36 @@ urlpatterns = [
     path("cook/",
          CookListView.as_view(),
          name="cook-list"),
-    path("dish/<int:pk>/",
-         DishDetailView.as_view(),
-         name="dish-detail"),
+
     path("cook/<int:pk>/",
          CookDetailView.as_view(),
          name="cook-detail"),
+    path(
+        "cook/create/",
+        CookCreateView.as_view(),
+        name="cook-create",
+    ),
+    path(
+        "cook/update/<int:pk>/",
+        CookUpdateView.as_view(),
+        name="cook-update",
+    ),
+    path(
+        "cook/delete/<int:pk>/",
+        CookDeleteView.as_view(),
+        name="cook-delete"
+    ),
+    path(
+        "cook/<int:pk>/assign_to_dish/",
+        assign_cook_to_dish,
+        name="cook-assign-to-dish",
+    ),
+    path(
+        "cook/<int:pk>/delete_from_dish/",
+        delete_cook_from_dish,
+        name="cook-delete-from-dish",
+    )
+
 ]
 
 app_name = "kitchen"
