@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>Types of dishes</h1>
+  {% if dishes_type_list %}
+      <table class="table table-bordered">
+        <tr>
+          <th scope="col">Name</th>
+        </tr>
+        {% for types in dishes_type_list %}
+          <tbody>
+          <tr>
+            <td>{{ types.name }}</td>
+          </tr>
+          </tbody>
+        {% endfor %}
+      </table>
+  {% else %}
+    <p>There are no dish types</p>
+  {% endif %}
+{% endblock %}

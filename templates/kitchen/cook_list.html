@@ -1,10 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>
+    Cooks
+  </h1>
+    <table class="table table-bordered">
+      <thead>
+      <tr>
+        <th scope="col">Username</th>
+        <th scope="col">Name</th>
+        <th scope="col">Year of experience</th>
+      </tr>
+      </thead>
+      <tbody>
+      {% if cook_list %}
+        {% for cook in cook_list %}
+          <tr>
+            <th scope="col">
+            {{ cook.username }}
+            </th>
+            <td>{{ cook.first_name }} {{ cook.last_name }}</td>
+            <td>{{ cook.years_of_experience }}</td>
+          </tr>
+        {% endfor %}
+      {% else %}
+        <th scope="col">There are not cooks</th>
+      {% endif %}
+      </tbody>
+    </table>
+{% endblock %}

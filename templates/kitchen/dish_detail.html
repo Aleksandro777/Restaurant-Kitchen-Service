@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
-  <h1>{{ dish.name }}, {{ dish.type_dish.name }}</h1>
+  <h1>{{ dish.name }} ({{ dish.dish_type.name }})</h1>
 
   <div>
   {% if dish.cooks.all %}

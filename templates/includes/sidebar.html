@@ -1,10 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+<ul class="sidebar-nav">
+    <li><a href="{% url 'kitchen:index' %}">Home page</a></li>
+    <li><a href="{% url 'kitchen:dish-type-list' %}">Types of dishes</a></li>
+    <li><a href="{% url 'kitchen:dish-list' %}">Dishes</a></li>
+    <li><a href="{% url 'kitchen:cook-list' %}">Cooks</a></li>
+</ul>
