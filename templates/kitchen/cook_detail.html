@@ -1,10 +1,33 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+{% extends "base.html" %}
+
+{% block content %}
+      <h1>{{ cooks.first_name }} {{ cooks.last_name }}</h1>
+
+    <p>
+      <strong>Username: </strong>{{ cooks.username }}<br>
+      <strong>Years of experience: </strong> {{ cooks.years_of_experience }}
+    </p>
+
+  {% if cooks.dishes.all %}
+    <h2>Dishes:</h2>
+
+    {% for dish in cooks.dishes.all %}
+        <ul>
+          <li class="list_item">
+            <div class="item_content">
+              <p>
+                <strong>Types of dishes:</strong>
+                {{ dish.dish_type.name }}<br>
+                <strong>Name: </strong>
+                <a href="{% url 'kitchen:dish-detail' pk=dish.id %}">{{ dish.name }}</a>
+              </p>
+            </div>
+          </li>
+        </ul>
+    {% endfor %}
+
+  {% else %}
+    <p>This cook does not have a dish</p>
+  {% endif %}
+
+{% endblock %}
