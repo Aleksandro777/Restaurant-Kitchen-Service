@@ -2,8 +2,8 @@
 
 {% block content %}
   <h1>
-    Dishes
-  </h1>
+     Dishes <a href="{% url 'kitchen:dish-create' %}" class="action-button">&nbsp+&nbsp</a>
+   </h1>
   <table class="table table-bordered">
     <thead>
     <tr>
