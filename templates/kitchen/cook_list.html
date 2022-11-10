@@ -9,6 +9,7 @@
       <tr>
         <th scope="col">Username</th>
         <th scope="col">Name</th>
+        <th scope="col">Last name</th>
         <th scope="col">Year of experience</th>
       </tr>
       </thead>
@@ -16,10 +17,12 @@
       {% if cook_list %}
         {% for cook in cook_list %}
           <tr>
+            <tr>
             <th scope="col">
-            {{ cook.username }}
+           <a href="{% url 'kitchen:cook-detail' pk=cook.id %}">{{ cook.username }}</a>
             </th>
-            <td>{{ cook.first_name }} {{ cook.last_name }}</td>
+            <td>{{ cook.first_name }} </td>
+            <td>{{ cook.last_name }} </td>
             <td>{{ cook.years_of_experience }}</td>
           </tr>
         {% endfor %}
