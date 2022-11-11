@@ -9,9 +9,7 @@ class ModelsTests(TestCase):
         dish_type = DishType.objects.create(
             name="test_name",
         )
-        self.assertEqual(
-            str(dish_type), f"{dish_type.name}"
-        )
+        self.assertEqual(str(dish_type), f"{dish_type.name}")
 
     def test_cook_str(self):
         username = "test_username"
@@ -53,7 +51,7 @@ class ModelsTests(TestCase):
             password=password,
             first_name=first_name,
             last_name=last_name,
-            years_of_experience=years_of_experience
+            years_of_experience=years_of_experience,
         )
 
         self.assertEqual(cook.username, username)

@@ -17,14 +17,12 @@ from kitchen.views import (
     CookUpdateView,
     CookDeleteView,
     delete_cook_from_dish,
-    assign_cook_to_dish
+    assign_cook_to_dish,
 )
 
 urlpatterns = [
     path("", index, name="index"),
-    path("dishtype/",
-         DishTypeListView.as_view(),
-         name="dish-type-list"),
+    path("dishtype/", DishTypeListView.as_view(), name="dish-type-list"),
     path(
         "dishtype/create/",
         DishTypeCreateView.as_view(),
@@ -40,13 +38,8 @@ urlpatterns = [
         DishTypeDeleteView.as_view(),
         name="dish-type-delete",
     ),
-
-    path("dish/",
-         DishListView.as_view(),
-         name="dish-list"),
-    path("dish/<int:pk>/",
-         DishDetailView.as_view(),
-         name="dish-detail"),
+    path("dish/", DishListView.as_view(), name="dish-list"),
+    path("dish/<int:pk>/", DishDetailView.as_view(), name="dish-detail"),
     path(
         "dish/create/",
         DishCreateView.as_view(),
@@ -62,13 +55,8 @@ urlpatterns = [
         DishDeleteView.as_view(),
         name="dish-delete",
     ),
-    path("cook/",
-         CookListView.as_view(),
-         name="cook-list"),
-
-    path("cook/<int:pk>/",
-         CookDetailView.as_view(),
-         name="cook-detail"),
+    path("cook/", CookListView.as_view(), name="cook-list"),
+    path("cook/<int:pk>/", CookDetailView.as_view(), name="cook-detail"),
     path(
         "cook/create/",
         CookCreateView.as_view(),
@@ -79,11 +67,7 @@ urlpatterns = [
         CookUpdateView.as_view(),
         name="cook-update",
     ),
-    path(
-        "cook/delete/<int:pk>/",
-        CookDeleteView.as_view(),
-        name="cook-delete"
-    ),
+    path("cook/delete/<int:pk>/", CookDeleteView.as_view(), name="cook-delete"),
     path(
         "cook/<int:pk>/assign_to_dish/",
         assign_cook_to_dish,
@@ -93,8 +77,7 @@ urlpatterns = [
         "cook/<int:pk>/delete_from_dish/",
         delete_cook_from_dish,
         name="cook-delete-from-dish",
-    )
-
+    ),
 ]
 
 app_name = "kitchen"

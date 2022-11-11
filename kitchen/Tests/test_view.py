@@ -42,11 +42,14 @@ class PrivateTests(TestCase):
     def setUp(self) -> None:
         DishType.objects.create(name="test")
         DishType.objects.create(name="test1")
-        Dish.objects.create(name="test_name", description="Hello World", price=2.22, dish_type_id=1)
-        Dish.objects.create(name="test_name1", description="Hello World1", price=3.22, dish_type_id=2)
+        Dish.objects.create(
+            name="test_name", description="Hello World", price=2.22, dish_type_id=1
+        )
+        Dish.objects.create(
+            name="test_name1", description="Hello World1", price=3.22, dish_type_id=2
+        )
         self.user = get_user_model().objects.create_user(
-            username="test_username",
-            password="test1234"
+            username="test_username", password="test1234"
         )
         self.client.force_login(self.user)
 

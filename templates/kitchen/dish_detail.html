@@ -36,6 +36,6 @@
     <p>This dish does not have any cooks</p>
   {% endif %}
   </div>
-  <a class="btn btn-outline-primary" href="{% url 'kitchen:dish-update' pk=dish.pk %}">Update</a>
+  <a class="btn btn-secondary" href="{% url 'kitchen:dish-update' pk=dish.pk %}">Update</a>
   <a class="btn btn-outline-danger" href="{% url 'kitchen:dish-delete' pk=dish.pk %}">Delete</a>
 {% endblock %}

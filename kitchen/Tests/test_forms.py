@@ -11,7 +11,7 @@ class FormsTests(TestCase):
             "password2": "user1234",
             "years_of_experience": 10,
             "first_name": "test_name",
-            "last_name": "test_last_name"
+            "last_name": "test_last_name",
         }
 
         form = CookCreateForm(data=form_data)

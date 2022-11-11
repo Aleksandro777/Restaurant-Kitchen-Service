@@ -5,8 +5,14 @@ from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views import generic
 
-from kitchen.form import DishForm, CookCreateForm, CookYearExperienceUpdateForm, DishTypeSearchForm, CookSearchForm, \
-    DishSearchForm
+from kitchen.form import (
+    DishForm,
+    CookCreateForm,
+    CookYearExperienceUpdateForm,
+    DishTypeSearchForm,
+    CookSearchForm,
+    DishSearchForm,
+)
 from kitchen.models import Cook, Dish, DishType
 
 
@@ -23,7 +29,7 @@ def index(request):
         "num_cooks": num_cooks,
         "num_dish_types": num_dish_types,
         "num_dishes": num_dishes,
-        "num_visits": num_visits
+        "num_visits": num_visits,
     }
 
     return render(request, "kitchen/index.html", context=context)
@@ -49,9 +55,7 @@ class DishTypeListView(LoginRequiredMixin, generic.ListView):
         form = DishTypeSearchForm(self.request.GET)
 
         if form.is_valid():
-            return self.queryset.filter(
-                name__icontains=form.cleaned_data["name"]
-            )
+            return self.queryset.filter(name__icontains=form.cleaned_data["name"])
 
         return self.queryset
 
@@ -94,9 +98,7 @@ class DishListView(LoginRequiredMixin, generic.ListView):
         form = DishSearchForm(self.request.GET)
 
         if form.is_valid():
-            return self.queryset.filter(
-                name__icontains=form.cleaned_data["name"]
-            )
+            return self.queryset.filter(name__icontains=form.cleaned_data["name"])
 
         return self.queryset
 
@@ -183,5 +185,3 @@ def delete_cook_from_dish(request, pk):
     dish = Dish.objects.get(pk=pk)
     dish.cooks.remove(request.user.id)
     return HttpResponseRedirect(reverse_lazy("kitchen:dish-detail", args=[pk]))
-
-
