@@ -4,9 +4,9 @@ Django project for managing dishes and cooks in kitchen
 
 ## Check it out!
 
-[Library project deployed to Render] (PASTE_LINK_HERE)
+[Library project deployed to Render](https://restaurant-kitchen-service-b3o3.onrender.com/)
 
-## Instalation
+## Installation
 
 Python3 must be already installed
 
