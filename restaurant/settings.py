@@ -17,13 +17,6 @@ from django.contrib.staticfiles.storage import staticfiles_storage
 from django.urls import path
 from django.views.generic import RedirectView
 
-urlpatterns = [
-    path(
-        "favicon.ico",
-        RedirectView.as_view(url=staticfiles_storage.url("favicon.ico")),
-    ),
-]
-
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
