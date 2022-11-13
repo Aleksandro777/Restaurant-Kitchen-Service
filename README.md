@@ -24,3 +24,6 @@ python manage.py runserver #starts Django server
 * Authentication functionality for Cook/User
 * Managing cooks, dishes and dishes type directly from website
 * Powerful admin panel for advanced managing 
+
+## DEMO
+
