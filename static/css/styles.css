@@ -1,0 +1,13 @@
+body {
+    margin-top: 20px;
+    background-image: url('/static/background.jpeg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: whitesmoke;
+
+}
+.link-to-page {
+    float: right;
+    margin: 0 2px 0 2px;
+}

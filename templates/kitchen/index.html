@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <div style="text-shadow: 1px 1px 10px black;">
+    <h1>Restaurant Kitchen Service</h1>
+    <h5>Welcome to the greatest Kitchen Service ever!</h5>
+    <h2>Kitchen service content:</h2>
+    <ul>
+        <li>Number of dishes: {{ num_dishes }}</li>
+        <li>Number of cooks: {{ num_cooks }}</li>
+        <li>Number of dishes type: {{ num_dish_types }}</li>
+    </ul>
+  <p>You have visited this page: {{ num_visits }} time{{ num_visits|pluralize }}.</p>
+  </div>
+{% endblock %}
