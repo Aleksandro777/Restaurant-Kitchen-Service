@@ -4,7 +4,7 @@ Django project for managing dishes and cooks in kitchen
 
 ## Check it out!
 
-[Library project deployed to Heroku] (PASTE_LINK_HERE)
+[Library project deployed to Render] (PASTE_LINK_HERE)
 
 ## Instalation
 
