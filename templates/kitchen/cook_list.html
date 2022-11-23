@@ -18,9 +18,9 @@
       <thead>
       <tr>
         <th scope="col">Id</th>
-        <th scope="col">Username</th>
         <th scope="col">Name</th>
         <th scope="col">Last name</th>
+        <th scope="col">Username</th>
         <th scope="col">Year of experience</th>
       </tr>
       </thead>
@@ -31,9 +31,9 @@
             <th scope="col">
            <a href="{% url 'kitchen:cook-detail' pk=cook.id %}">{{ cook.id }}</a>
             </th>
-            <td scope="col">{{ cook.username }}</td>
             <td>{{ cook.first_name }} </td>
             <td>{{ cook.last_name }} </td>
+            <td scope="col">{{ cook.username }}</td>
             <td>{{ cook.years_of_experience }}</td>
           </tr>
         {% endfor %}
