@@ -25,6 +25,12 @@ python manage.py runserver #starts Django server
 * Managing cooks, dishes and dishes type directly from website
 * Powerful admin panel for advanced managing 
 
+## Demo pages
+
+![img.png](img.png)
+
+![img_1.png](img_1.png)
+
 ## TEST USER
 
 login: user

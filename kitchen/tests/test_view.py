@@ -114,3 +114,11 @@ class PrivateTests(TestCase):
         self.assertEqual(new_user.first_name, form_data["first_name"])
         self.assertEqual(new_user.last_name, form_data["last_name"])
         self.assertEqual(new_user.years_of_experience, form_data["years_of_experience"])
+
+    def test_dishes_search(self):
+        response = self.client.get("/dish/?name=Cake")
+        self.assertEqual(response.status_code, 200)
+        self.assertQuerysetEqual(
+            response.context["dish_list"],
+            Dish.objects.filter(name__icontains="Cake")
+        )
