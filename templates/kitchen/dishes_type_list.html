@@ -14,15 +14,19 @@
   <br>
   {% if dishes_type_list %}
       <table class="table table table-dark">
+      <thead>
         <tr>
           <th scope="col">Id</th>
           <th scope="col">Name</th>
-          <th>Update</th>
-          <th>Delete</th>
+          <th scope="col">Update</th>
+          <th scope="col">Delete</th>
         </tr>
-        {% for types in dishes_type_list %}
+      </thead>
           <tbody>
-          <tr>
+          {% for types in dishes_type_list %}
+            <thead>
+            <tr>
+
             <td>{{ types.id }}</td>
             <td>{{ types.name }}</td>
             <td>
@@ -33,7 +37,8 @@
               <a href="{% url 'kitchen:dish-type-delete' pk=types.id %}">Delete</a>
             </td>
 
-          </tr>
+      </tr>
+            </thead>
           </tbody>
         {% endfor %}
       </table>

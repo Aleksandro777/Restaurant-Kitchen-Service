@@ -17,7 +17,7 @@
     <table class="table table table-dark">
       <thead>
       <tr>
-        <td scope="col">Id</td>
+        <th scope="col">Id</th>
         <th scope="col">Username</th>
         <th scope="col">Name</th>
         <th scope="col">Last name</th>
@@ -28,11 +28,10 @@
       {% if cook_list %}
         {% for cook in cook_list %}
           <tr>
-            <tr>
             <th scope="col">
            <a href="{% url 'kitchen:cook-detail' pk=cook.id %}">{{ cook.id }}</a>
             </th>
-            <th scope="col">{{ cook.username }}</th>
+            <td scope="col">{{ cook.username }}</td>
             <td>{{ cook.first_name }} </td>
             <td>{{ cook.last_name }} </td>
             <td>{{ cook.years_of_experience }}</td>
