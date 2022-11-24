@@ -42,4 +42,3 @@ python manage.py runserver #starts Django server
 
 login: user
 password: user12345
-
